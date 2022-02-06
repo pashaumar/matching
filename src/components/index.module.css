@@ -1,0 +1,29 @@
+.container {
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px grey;
+  padding: 20px;
+}
+.heading {
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 20px 0;
+}
+.match {
+  display: flex;
+  width: 320px;
+  justify-content: space-around;
+}
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px auto 0 auto;
+  width: 70%;
+}
+.actions button {
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
