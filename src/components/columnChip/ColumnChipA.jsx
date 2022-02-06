@@ -2,8 +2,10 @@ import React from "react";
 import classes from "./ColumnChip.module.css";
 
 function ColumnChipA(props) {
-  const { item, dragStart, index, data } = props;
-  const matchItem = data.find((record) => record?.draggedItem?.id === item?.id);
+  const { item, dragStart, index, records } = props;
+  const matchItem = records?.find(
+    (record) => record?.draggedItem?.id === item?.id
+  );
   const onDragStart = (event) => {
     dragStart(index + 1, item, event);
   };

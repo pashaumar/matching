@@ -2,9 +2,11 @@ import React from "react";
 import classes from "./ColumnChip.module.css";
 
 function ColumnChipB(props) {
-  const { item, drop, data, answer, index } = props;
+  const { item, drop, records, answer, index } = props;
 
-  const matchItem = data.find((record) => record?.onDropItem?.id === item?.id);
+  const matchItem = records.find(
+    (record) => record?.onDropItem?.id === item?.id
+  );
 
   const onDragOver = (event) => {
     event.preventDefault();

@@ -4,7 +4,7 @@ import { columnB } from "../constant.js";
 import ColumnChipB from "../columnChip/ColumnChipB";
 
 function Column(props) {
-  const { drop, data, answer } = props;
+  const { drop, records, answer } = props;
   return (
     <div className={classes.container}>
       <div style={{ textAlign: "center" }}>Column B</div>
@@ -13,7 +13,7 @@ function Column(props) {
           item={item}
           key={item.id}
           drop={drop}
-          data={data}
+          records={records}
           answer={answer}
           index={index}
         />

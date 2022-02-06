@@ -5,20 +5,20 @@ import ColumnB from "./columnB/ColumnB";
 import classes from "./index.module.css";
 
 function Matching() {
-  const [data, setData] = useState([]);
+  const [records, setRecords] = useState([]);
   const [answer, setAnswer] = useState([]);
-  let draggedRecord = {};
+  let record = {};
 
   const dragStart = (index, obj, e) => {
     if (e) {
-      draggedRecord["index"] = index;
-      draggedRecord["draggedItem"] = obj;
+      record["index"] = index;
+      record["draggedItem"] = obj;
     }
   };
   const drop = (e, obj) => {
     if (e) {
-      draggedRecord["onDropItem"] = obj;
-      setData((prev) => [...prev, draggedRecord]);
+      record["onDropItem"] = obj;
+      setRecords((prev) => [...prev, record]);
     }
   };
 
@@ -26,14 +26,14 @@ function Matching() {
     <div className={classes.container}>
       <div className={classes.heading}>Match The Following</div>
       <div className={classes.match}>
-        <ColumnA dragStart={dragStart} data={data} />
-        <ColumnB drop={drop} data={data} answer={answer} />
+        <ColumnA dragStart={dragStart} records={records} />
+        <ColumnB drop={drop} records={records} answer={answer} />
       </div>
       <div className={classes.actions}>
         <button
           onClick={() => {
-            setData([]);
-            draggedRecord = {};
+            setRecords([]);
+            record = {};
             setAnswer([]);
           }}
         >
@@ -41,7 +41,7 @@ function Matching() {
         </button>
         <button
           onClick={() => {
-            if (data?.length < 6) return;
+            if (records?.length < answerOrder?.length) return;
             setAnswer(answerOrder);
           }}
         >

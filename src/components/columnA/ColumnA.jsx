@@ -4,7 +4,7 @@ import { columnA } from "../constant.js";
 import ColumnChipA from "../columnChip/ColumnChipA";
 
 function Column(props) {
-  const { dragStart, data } = props;
+  const { dragStart, records } = props;
   return (
     <div className={classes.container}>
       <div style={{ textAlign: "center" }}>Column A</div>
@@ -14,7 +14,7 @@ function Column(props) {
           key={item.id}
           dragStart={dragStart}
           index={index}
-          data={data}
+          records={records}
         />
       ))}
     </div>
